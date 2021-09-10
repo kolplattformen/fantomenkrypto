@@ -10,7 +10,7 @@ export default function handler(req, res) {
     const str = stringz.replace(/\\\"/g, '"')
     const strings = fantomenkrypto(str,numberz);
 
-    res.status(200).json(findStrings(strings))
+    res.status(200).json( { ...findStrings(strings), topologyBase64Iterations: 8 })
 
   })
 
